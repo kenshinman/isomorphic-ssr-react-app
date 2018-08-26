@@ -4,9 +4,11 @@
   "description": "Server Side Rendering for React",
   "main": "index.js",
   "scripts": {
-    "dev:build:server": "webpack --config webpack.server.js"
+    "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
+    "dev:build:server": "webpack --config webpack.server.js --watch",
+    "dev:build:client": "webpack --config webpack.client.js --watch"
   },
-  "keywords": [],
+  "keywords": ["react", "ssr", "react ssr"],
   "author": "Kehinde Orilogbon <archkenny@yahoo.com>",
   "license": "ISC",
   "dependencies": {
