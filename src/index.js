@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
     <title>My SSR App</title>
   </head>
   <body>
-    <div>${content}</div>
+    <div id="root">${content}</div>
     <script src="bundle.js"></script>
   </body>
   </html>`;

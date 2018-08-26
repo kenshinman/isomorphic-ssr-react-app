@@ -7024,7 +7024,7 @@ app.use(_express2.default.static("public"));
 app.get("/", function (req, res) {
   var content = (0, _server.renderToString)(_react2.default.createElement(_Home2.default, null));
 
-  var html = "\n  <!DOCTYPE html>\n  <html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\"/>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\"/>\n    <title>My SSR App</title>\n  </head>\n  <body>\n    <div>" + content + "</div>\n    <script src=\"bundle.js\"></script>\n  </body>\n  </html>";
+  var html = "\n  <!DOCTYPE html>\n  <html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\"/>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"/>\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\"/>\n    <title>My SSR App</title>\n  </head>\n  <body>\n    <div id=\"root\">" + content + "</div>\n    <script src=\"bundle.js\"></script>\n  </body>\n  </html>";
 
   res.send(html);
 });
