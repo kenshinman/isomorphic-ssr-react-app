@@ -4,7 +4,6 @@ import { matchRoutes } from "react-router-config";
 import Routes from "./client/Routes";
 import renderer from "./helpers/renderer";
 
-import Home from "./client/components/Home";
 import createStore from "./helpers/createStore";
 
 const app = express();
