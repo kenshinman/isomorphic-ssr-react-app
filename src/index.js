@@ -1,32 +1,20 @@
+import "babel-polyfill";
 import React from "react";
 import express from "express";
-import { renderToString } from "react-dom/server";
+import renderer from "./helpers/renderer";
 
 import Home from "./client/components/Home";
+import createStore from "./helpers/createStore";
 
 const app = express();
 
 app.use(express.static("public"));
 
-app.get("/", (req, res) => {
-  const content = renderToString(<Home />);
+app.get("*", (req, res) => {
+  const store = createStore();
+  //some loginc to initialie and load data to store
 
-  const html = `
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-    <title>My SSR App</title>
-  </head>
-  <body>
-    <div id="root">${content}</div>
-    <script src="bundle.js"></script>
-  </body>
-  </html>`;
-
-  res.send(html);
+  res.send(renderer(req, store));
 });
 
 app.listen(3000, () => {
