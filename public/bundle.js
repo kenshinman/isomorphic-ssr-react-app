@@ -60,83 +60,15 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 6);
+/******/ 	return __webpack_require__(__webpack_require__.s = 184);
 /******/ })
 /************************************************************************/
 /******/ ({
 
-/***/ 0:
+/***/ 184:
 /***/ (function(module, exports) {
 
-module.exports = require("react");
-
-/***/ }),
-
-/***/ 13:
-/***/ (function(module, exports) {
-
-module.exports = require("react-dom/server");
-
-/***/ }),
-
-/***/ 19:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(0);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Home = function Home() {
-  return _react2.default.createElement(
-    "div",
-    null,
-    "I'm the home component"
-  );
-};
-
-exports.default = Home;
-
-/***/ }),
-
-/***/ 6:
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var express = __webpack_require__(8);
-var React = __webpack_require__(0);
-var renderToString = __webpack_require__(13).renderToString;
-
-var Home = __webpack_require__(19).default;
-
-var app = express();
-
-app.get("/", function (req, res) {
-  var content = renderToString(React.createElement(Home, null));
-
-  res.send(content);
-});
-
-app.listen(3000, function () {
-  console.log("ronning on port 3000");
-});
-
-/***/ }),
-
-/***/ 8:
-/***/ (function(module, exports) {
-
-module.exports = require("express");
+throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/kenshinman/Desktop/projects/ssrTut/server/src/client/client.js'");
 
 /***/ })
 
