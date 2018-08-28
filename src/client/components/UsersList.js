@@ -9,7 +9,7 @@ class UsersList extends Component {
   }
 
   componentWillMount() {
-    // this.props.fetchUsers();
+    this.props.fetchUsers();
   }
 
   renderUsers() {
@@ -21,7 +21,7 @@ class UsersList extends Component {
     return (
       <div>
         <h3>Here's a List of Users:</h3>
-        <ul>{this.renderUser()}</ul>
+        <ul>{this.renderUsers()}</ul>
       </div>
     );
   }
@@ -31,7 +31,13 @@ const mapStateToProps = state => ({
   users: state.users
 });
 
+function loadData(store) {
+  return store.dispatch(fetchUsers());
+}
+
+export { loadData };
+
 export default connect(
-  null,
+  mapStateToProps,
   { fetchUsers }
 )(UsersList);
